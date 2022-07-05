@@ -1,6 +1,7 @@
 import express from "express";
 import database from "../database";
-import users from "../routes/User";
+import User from "../routes/User";
+import Post from "../routes/Post";
 
 
 import cors from "cors";
@@ -9,8 +10,8 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-app.use("/users", users);
-// app.use("/posts", posts);
+app.use("/users", User);
+app.use("/posts", Post);
 // app.use("/comment", comment);
 
 database
