@@ -1,24 +1,7 @@
-
 import { Association, DataTypes, Model, Optional, UUIDV4 } from "sequelize";
 import sequelize from "../database";
 
-class User extends Model
-//   implements UserAttributes
-{
-  /**
-   * Helper method for defining associations.
-   * This method is not a part of Sequelize lifecycle.
-   * The `models/index` file will call this method automatically.
-   */
-  id!;
-  name!;
-  email!;
-  password!;
-
-  // public static associations: {
-  //   roleId: Association<User, Role>;
-  // };
-}
+class User extends Model {}
 User.init(
   {
     id: {

@@ -2,19 +2,7 @@ import { Association, DataTypes, Model, Optional, UUIDV4 } from "sequelize";
 import sequelize from "../database";
 import User from "./user";
 
-class Post
-  extends Model
-//   implements PostAttributes
-{
-  /**
-   * Helper method for defining associations.
-   * This method is not a part of Sequelize lifecycle.
-   * The `models/index` file will call this method automatically.
-   */
-  id!;
-  description!;
-  userId!;
-
+class Post extends Model {
 }
 Post.init(
   {
@@ -39,4 +27,5 @@ Post.init(
 
 User.hasMany(Post);
 Post.belongsTo(User);
+
 export default Post;

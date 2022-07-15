@@ -53,9 +53,12 @@ router.get("getcomments/:id", async (req, res) => {
     const postId = parseInt(req.params.id);
     const comments = await Comment.findAll({
       where: {
-        postId,
+        postId: postId,
       },
     });
+    if (!comments) {
+      res.status(400).json({ err: "no comments found" });
+    }
     res.status(200).json(comments);
   } catch (err) {
     res.status(400).json("Error: " + err);
@@ -66,7 +69,7 @@ router.delete("/:id", async (req, res) => {
   try {
     const { text } = req.body;
     const id = parseInt(req.params.id);
-    const post = post.findbypk(req.params);
+    const post = Post.findbypk(req.params);
     if (id === post) {
       await Comment.destroy({
         post,
@@ -83,9 +86,13 @@ router.put("/:id", async (req, res) => {
   try {
     const postId = req.body.postId;
     const text = req.body.text;
-    const updateComment = await Comment.Create({
-      postId,
-      text,
+    const comment = await Comment.findOne({ where: { postId: postId } });
+    if (!comment) {
+      res.status(400).json({ err: "no comments found" });
+    }
+    const updateComment = await Comment.update({
+      postId: postId,
+      text: text,
     });
     res.status(200).json(updateComment);
   } catch (err) {
