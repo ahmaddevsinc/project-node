@@ -1,5 +1,5 @@
-import { Association, DataTypes, Model, Optional, UUIDV4 } from "sequelize";
-import sequelize from "../database";
+import { DataTypes, Model, UUIDV4 } from "sequelize";
+import sequelize from "../../database.js";
 
 class User extends Model {}
 User.init(
@@ -27,7 +27,7 @@ User.init(
   },
   {
     sequelize,
-    modelName: "Users",
+    modelName: "User",
   }
 );
 export default User;

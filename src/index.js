@@ -1,8 +1,8 @@
 import express from "express";
-import database from "../database";
-import User from "./routes/User";
-import Post from "./routes/Post";
-import Comment from "./routes/Comment";
+import database from "../database.js";
+import User from "./routes/User.js";
+import Post from "./routes/Post.js";
+import Comment from "./routes/Comment.js";
 
 import cors from "cors";
 

@@ -1,7 +1,7 @@
 import { Sequelize } from "sequelize";
 // const sequelize = new Sequelize("postgres", "ahmad", "12345", {
     const sequelize = new Sequelize("demodb", "test", "testdb", {
-    dialect: "demodb", //which db we using
+    dialect: "postgres", //which db we using
   host: "localhost",
   define: {
     timestamps: true, // it auto create created_at, updated_at in every table
