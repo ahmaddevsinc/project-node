@@ -1,7 +1,7 @@
-import express, { Request, Response } from "express";
-import User from "../Models/User";
 import bcrypt from "bcrypt";
-import createTokens from "../jwt";
+import express from "express";
+import createTokens from "../jwt.js";
+import User from "../Models/User.js";
 
 const router = express.Router();
 

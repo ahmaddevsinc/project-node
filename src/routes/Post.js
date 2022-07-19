@@ -1,7 +1,7 @@
 import express from "express";
-import Post from "../Models/Post";
-import User from "../Models/User";
-import { isAuthenticated } from "../jwt";
+import Post from "../Models/Post.js";
+import User from "../Models/User.js";
+import { isAuthenticated } from "../jwt.js";
 
 const router = express.Router();
 

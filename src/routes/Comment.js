@@ -1,8 +1,8 @@
 import express from "express";
-import Comment from "../models/comment";
-import Post from "../models/Post";
-import User from "../models/user";
-import { isAuthenticated } from "../jwt";
+import Comment from "../Models/Comment.js";
+import Post from "../Models/Post.js";
+import User from "../Models/Comment.js";
+import { isAuthenticated } from "../jwt.js";
 
 const router = express.Router();
 

@@ -1,6 +1,6 @@
-import { Association, DataTypes, Model, Optional, UUIDV4 } from "sequelize";
-import sequelize from "../database";
-import User from "./user";
+import { DataTypes, Model, UUIDV4 } from "sequelize";
+import sequelize from "../../database.js";
+import User from "./User.js";
 
 class Post extends Model {
 }
@@ -15,13 +15,10 @@ Post.init(
     description: {
       type: DataTypes.STRING,
     },
-    imageUrl: {
-      type: DataTypes.STRING,
-    },
   },
   {
     sequelize,
-    modelName: "posts",
+    modelName: "Post",
   }
 );
 

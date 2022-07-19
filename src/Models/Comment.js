@@ -1,7 +1,7 @@
 import { DataTypes, Model, UUIDV4 } from "sequelize";
-import sequelize from "../../database";
-import Post from "./Post";
-import User from "./User";
+import sequelize from "../../database.js";
+import Post from "./Post.js";
+import User from "./User.js";
 
 class Comment extends Model {}
 Comment.init(
@@ -33,7 +33,7 @@ Comment.init(
   },
   {
     sequelize,
-    modelName: "comments",
+    modelName: "Comment",
   }
 );
 

@@ -1,5 +1,4 @@
-import { Request, RequestHandler, NextFunction, Response } from "express";
-import jwt, { sign, verify } from "jsonwebtoken";
+import sign from "jsonwebtoken";
 import jwt_decode from "jwt-decode";
 
 const key = "ahmad#@$@!@!1212#212e3";
@@ -20,7 +19,7 @@ export const isAuthenticated = async (
   next
 ) => {
   try {
-    const token = req.headers.authorization?.split(" ")[1];
+    const token = req.headers.authorization.split(" ")[1];
 
     if (!token) {
       return res
