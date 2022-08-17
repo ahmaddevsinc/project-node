@@ -2,8 +2,8 @@ import { DataTypes, Model, UUIDV4 } from "sequelize";
 import sequelize from "../../database.js";
 import User from "./User.js";
 
-class Post extends Model {
-}
+class Post extends Model {}
+
 Post.init(
   {
     id: {
@@ -12,13 +12,19 @@ Post.init(
       allowNull: false,
       primaryKey: true,
     },
+    title: {
+      type: DataTypes.STRING,
+    },
     description: {
       type: DataTypes.STRING,
+    },
+    draft: {
+      type: DataTypes.BOOLEAN,
     },
   },
   {
     sequelize,
-    modelName: "Post",
+    modelName: "post",
   }
 );
 

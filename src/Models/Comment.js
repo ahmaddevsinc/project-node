@@ -12,9 +12,6 @@ Comment.init(
       allowNull: false,
       primaryKey: true,
     },
-    name: {
-      type: DataTypes.STRING,
-    },
     text: {
       type: DataTypes.STRING,
     },
@@ -33,7 +30,7 @@ Comment.init(
   },
   {
     sequelize,
-    modelName: "Comment",
+    modelName: "comment",
   }
 );
 
